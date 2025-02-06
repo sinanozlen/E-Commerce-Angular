@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SharedModule } from '../../common/shared/shared.module';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -9,4 +10,9 @@ import { SharedModule } from '../../common/shared/shared.module';
 })
 export class LoginComponent {
 
+  login(form:NgForm){
+    if(form.valid){
+      console.log(form.value)
+    }
+  }
 }

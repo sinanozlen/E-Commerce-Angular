@@ -32,7 +32,7 @@ options: any ={};
     });
   }
 
-  post<T>(api:string,model:any,callBack: (res:any) => void){
+  post<T>(api:string,model:any,callBack: (res:T) => void){
     this._spinner.show();
     this._http.post<T>(`${this.api}/${api}`,model,{}).subscribe({
       next:(res:T) => {

@@ -21,12 +21,11 @@ export class CategoryService {
     let model = {name:name};
     this._http.post<MessageResponseModel>("categories/add",model, res=> callBack(res));
   }
-  update(_id:string,name:string, callBack:(res:MessageResponseModel) => void){
-    let model = {_id:_id,name:name};
+  update(model: CategoryModel, callBack:(res:MessageResponseModel) => void){    
     this._http.post<MessageResponseModel>("categories/update",model, res=> callBack(res));
   }
   removeById(_id:string, callBack:(res:MessageResponseModel) => void){
     let model = {_id:_id};
-    this._http.post<MessageResponseModel>("categories/add",model, res=> callBack(res));
+    this._http.post<MessageResponseModel>("categories/removeById",model, res=> callBack(res));
   }
 }
